@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Project1.TienPhong1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:Project1"
+        mc:Ignorable="d"
+        Height="900" Width="1450" >
+    <Border CornerRadius="20" Background="White">
+        <Grid>
+            <Button Background="#7ACBFF" HorizontalAlignment="Left" Margin="191,65,0,0" VerticalAlignment="Top" Width="190" Height="67" Click="AddTienPhong">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tạo mới" FontSize="30"  Foreground="White"/>
+                        <Image Margin="20,0,0,0" Source="/Images/Vector.png" Height="30" Width="30" />
+                    </StackPanel>
+
+                </Button.Content>
+            </Button>
+            <ListView x:Name="listview" Margin="191,206,389,104" ItemsSource="{Binding Tg}" >
+
+                <ListView.ItemContainerStyle>
+
+                    <Style TargetType="ListViewItem">
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border HorizontalAlignment="Left" x:Name="borderItem" CornerRadius="10"  Margin="0,30,0,0" Height="82" Width="530" Background="#7ACBFF" >
+                                        <Border.InputBindings>
+                                            <MouseBinding Gesture="LeftClick" Command="{Binding DataContext.TgCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding}"/>
+                                        </Border.InputBindings>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="40" Height="53" Source="/Images/🦆 icon _File Invoice with US Dollar_.png" Margin="26,0,0,0" />
+                                            <TextBlock FontSize="30" Foreground="White" VerticalAlignment="Center"  Margin="20,0,0,0" Text="Tiền phòng tháng "/>
+                                            <TextBlock FontSize="30" x:Name="Mont" Foreground="White" VerticalAlignment="Center"  Text="{Binding Mon}"/>
+                                            <TextBlock FontSize="30" Foreground="White" VerticalAlignment="Center"  Text=" năm "/>
+                                            <TextBlock FontSize="30" x:Name="Yea" Foreground="White" VerticalAlignment="Center"  Text="{Binding Ye}"/>
+                                        </StackPanel>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+
+                    </Style>
+
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <Image Source="/Images/🦆 icon _Search_.png" Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1087,206,0,0" RenderTransformOrigin="9.092,-0.42"/>
+            <StackPanel Height="46" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="255" Margin="1141,207,0,0">
+
+                <TextBox TextWrapping="Wrap" Style="{DynamicResource MahApps.Styles.TextBox}" BorderBrush="Transparent" Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" FontSize="24" FontFamily="IBM Plex Sans" Height="40" Width="246" RenderTransformOrigin="0.134,37.7">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding FilterCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+                <Rectangle Height="1" Fill="#7ACBFF" Width="500"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

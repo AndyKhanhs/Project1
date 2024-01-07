@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\account.png" />
+    <None Remove="Images\arrow.png" />
+    <None Remove="Images\bin.png" />
+    <None Remove="Images\check-mark.png" />
+    <None Remove="Images\close.png" />
+    <None Remove="Images\edit.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\Vector %281%29.png" />
+    <None Remove="Images\Vector.png" />
+    <None Remove="Images\x-mark.png" />
+    <None Remove="Images\🦆 icon _Bars_.png" />
+    <None Remove="Images\🦆 icon _Dollar Sign_ %281%29.png" />
+    <None Remove="Images\🦆 icon _File Invoice with US Dollar_.png" />
+    <None Remove="Images\🦆 icon _Search_.png" />
+    <None Remove="Images\🦆 icon _User Circle_.png" />
+    <None Remove="Images\🦆 icon _Users Cog_.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.0.5" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\account.png" />
+    <Resource Include="Images\arrow.png" />
+    <Resource Include="Images\bin.png" />
+    <Resource Include="Images\check-mark.png" />
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\Vector (1).png" />
+    <Resource Include="Images\Vector.png" />
+    <Resource Include="Images\x-mark.png" />
+    <Resource Include="Images\🦆 icon _Bars_.png" />
+    <Resource Include="Images\🦆 icon _Dollar Sign_ (1).png" />
+    <Resource Include="Images\🦆 icon _File Invoice with US Dollar_.png" />
+    <Resource Include="Images\🦆 icon _Search_.png" />
+    <Resource Include="Images\🦆 icon _User Circle_.png" />
+    <Resource Include="Images\🦆 icon _Users Cog_.png" />
+  </ItemGroup>
+
+</Project>

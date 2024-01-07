@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="Project1.Item_Phong"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project1" x:Name="MyUserControl"
+             mc:Ignorable="d">
+    <Border x:Name="BorderItem"  Height="175" Width="277" Background="White" CornerRadius="10" BorderThickness="2">
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="BorderBrush" Value="#2FADFF"/>
+
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Status}" Value="0">
+                        <Setter Property="BorderBrush" Value="Red"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <Grid Margin="0,0,-2,0">
+            <Border  CornerRadius="10 10 0 0" Height="36" VerticalAlignment="Top" Margin="0,0,1,0" RenderTransformOrigin="0.5,0.5">
+                
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.369"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.744"/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="28,1,193,1">
+                    <TextBlock Text="P" FontSize="20" FontWeight="Bold"  Foreground="White"/>
+                    <TextBlock x:Name="roomNumbertxt" FontSize="20" FontWeight="Bold" Foreground="White">
+
+                    </TextBlock>
+                </StackPanel>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Background" Value="#2FADFF"/>
+                        
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Background" Value="Red"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+            <Image x:Name="ImageStatus" Source="/Images/x-mark.png" Height="53" Width="53" Margin="13,51,188,67">
+                
+            </Image>
+            <TextBlock x:Name="Host" TextWrapping="Wrap" Margin="84,70,0,72" FontSize="18" Foreground="#00416B" FontWeight="DemiBold">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <TextBlock Text="Số lượng: " Margin="84,99,121,53" FontStyle="Italic" FontWeight="Thin" FontSize="12" Foreground="#00416B" RenderTransformOrigin="0.462,0.898">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <TextBlock  x:Name="Quantity" Margin="140,99,112,51" FontSize="12" FontStyle="Italic" Foreground="#00416B">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button Content="Chi tiết" Background="#2fadff" FontSize="10" Foreground="White" HorizontalAlignment="Left" Margin="154,134,0,0" VerticalAlignment="Top" Width="82" Click="ChiTietCommand" >
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Trả phòng" Background="red" Click="TraPhongCommand" FontSize="10"  Foreground="White" HorizontalAlignment="Left" Margin="43,134,0,0" VerticalAlignment="Top" Width="82">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <TextBlock Margin="84,51,81,101"  FontSize="14"  >
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="Chủ phòng"/>
+                        <Setter Property="Foreground" Value="#00416B"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Foreground" Value="Red"/>
+                                <Setter Property="Text" Value="Phòng trống"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button Content="Thêm khách" Click="ThemKhach" Background="#2fadff" FontSize="10" Foreground="White" HorizontalAlignment="Center" Margin="0,134,0,0" VerticalAlignment="Top" Width="82">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="0">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+        </Grid>
+
+    </Border>
+</UserControl>

@@ -1,0 +1,64 @@
+﻿<mah:MetroWindow x:Class="Project1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project1"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="Quản lý phòng trọ" Height="1040" Width="1920" 
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+        ShowIconOnTitleBar="True" Background="#EAF7FF">
+
+    <Grid>
+        <Border Background="White" Height="900" Width="374" CornerRadius="20" Margin="25,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Color="Black" Opacity="0.4"/>
+            </Border.Effect>
+
+            <Grid>
+                <StackPanel Orientation="Vertical" >
+                    <TextBlock Text="Hi," Foreground="#FF9FD9FF" FontSize="20" Width="31" Margin="38,49,0,0" HorizontalAlignment="Left"  />
+                    <Image Source="/Images/🦆 icon _User Circle_.png" Height="100" Width="100" Panel.ZIndex="0" />
+                    <TextBlock Foreground="#00416B" TextWrapping="Wrap" Text="Phan Khánh Linh" HorizontalAlignment="Center" TextAlignment="Center" FontSize="30" FontWeight="Bold" Width="306" Height="46" Margin="0,9,0,0"/>
+                    <Border x:Name="TrangChuBorder"  Height="68" Width="337" MouseLeftButtonDown="Open_TrangChu" HorizontalAlignment="Center"  CornerRadius="10" Background="#C5E8FF" Margin="0,69,0,0" >
+                        <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                            <Image Height="35" Width="35" Margin="30,0,0,0" Source="/Images/🦆 icon _Bars_.png" />
+                            <TextBlock TextWrapping="Wrap" Text="Trang chủ" FontFamily="IBM Plex Sans" FontSize="28" Height="31" Foreground="#005A94" Margin="25,0,0,0"/>
+                        </StackPanel>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Opacity="0.25"/>
+                        </Border.Effect>
+                    </Border>
+                    <Border Height="68" x:Name="TienPhongBorder" MouseLeftButtonDown="Open_TienPhong" Width="337" Margin="0,20,0,0" CornerRadius="10" Background="#C5E8FF" >
+                        <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                            <Image Height="35" Width="35" Margin="30,0,0,0" Source="/Images/🦆 icon _Dollar Sign_ (1).png" />
+                            <TextBlock TextWrapping="Wrap" Text="Tiền phòng" FontFamily="IBM Plex Sans" FontSize="28" Height="31" Foreground="#005A94" Margin="25,0,0,0"/>
+                        </StackPanel>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Opacity="0.25"/>
+                        </Border.Effect>
+                    </Border>
+                    <Border Height="68" Width="337" x:Name="ThongKeBorder" MouseLeftButtonDown="Open_ThongKe" Margin="0,20,0,0" CornerRadius="10" Background="#C5E8FF" >
+                        <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                            <Image Height="35" Width="35" Margin="30,0,0,0" Source="/Images/🦆 icon _Users Cog_.png" />
+                            <TextBlock TextWrapping="Wrap" Text="Thống kê" FontFamily="IBM Plex Sans" FontSize="28" Height="31" Foreground="#005A94" Margin="25,0,0,0"/>
+                        </StackPanel>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Opacity="0.25"/>
+                        </Border.Effect>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border  Background="White" x:Name="MainBorder" Margin="435,90,35,0" CornerRadius="20" Height="900" VerticalAlignment="Top">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Color="Black" Opacity="0.4"/>
+            </Border.Effect>
+        </Border>
+        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Foreground="#00416B"  TextWrapping="Wrap" Text="WELCOME TO số 10 ngách 64 ngõ An Sơn, đường Đại La, phường Trương Định" VerticalAlignment="Top" FontSize="43" Margin="0,20,0,0"/>
+
+
+    </Grid>
+</mah:MetroWindow>
