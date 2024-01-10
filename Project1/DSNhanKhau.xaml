@@ -72,6 +72,8 @@
 
 
             </ListView>
+            <TextBlock HorizontalAlignment="Left" Margin="108,123,0,0" TextWrapping="Wrap" FontSize="20" FontStyle="Italic" Text="Tổng số: " VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="184,123,0,0" TextWrapping="Wrap" FontSize="20" FontStyle="Italic" Text="{Binding SUm}" VerticalAlignment="Top"/>
         </Grid>
     </Border>
 </UserControl>

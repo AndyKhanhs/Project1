@@ -33,6 +33,7 @@ namespace Project1
         private int _sumDaNop;
         private int _sumConThieu;
         private List<TienPhongFull> _list;
+
         public int Mon {  get; set; }
         public int Ye { get; set; }
         public int Summ
@@ -170,7 +171,7 @@ namespace Project1
             {
                 if (File.Exists(filePath))
                 {
-                    MessageBoxResult result = MessageBox.Show("File already exists. Do you want to continue exporting?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult result = MessageBox.Show("Tệp đã tồn tại. Bạn có muốn tiếp tục tải?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                     if (result == MessageBoxResult.No)
                     {
@@ -183,7 +184,7 @@ namespace Project1
                     string directory = System.IO.Path.GetDirectoryName(filePath);
                     string newFileName = originalFileName;
 
-                    // Modify the file name by appending a counter until a unique name is found
+                    
                     while (File.Exists(System.IO.Path.Combine(directory, newFileName + fileExtension)))
                     {
                         counter++;
@@ -197,10 +198,10 @@ namespace Project1
                 {
                     ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Data");
 
-                    // Set column widths based on your DataGrid layout
+                    
                     for (int i = 0; i < myDataGrid.Columns.Count; i++)
                     {
-                        worksheet.Column(i + 1).Width = myDataGrid.Columns[i].ActualWidth; // Adjust the divisor as needed
+                        worksheet.Column(i + 1).Width = myDataGrid.Columns[i].ActualWidth; 
                     }
 
                     worksheet.Cells[1, 1].Value = "Phòng";
@@ -237,10 +238,10 @@ namespace Project1
                     worksheet.Cells[1, 11].Value = "Mạng";
                     worksheet.Cells[1, 11, 2, 11].Merge = true;
                     worksheet.Cells[1, 11, 2, 11].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Medium);
-                    worksheet.Cells[1, 13].Value = "Tổng tiên";
+                    worksheet.Cells[1, 13].Value = "Nợ tháng trước";
                     worksheet.Cells[1, 13, 2, 13].Merge = true;
                     worksheet.Cells[1, 13, 2, 13].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Medium);
-                    worksheet.Cells[1, 14].Value = "Nợ tháng trước";
+                    worksheet.Cells[1, 14].Value = "Tổng tiền";
                     worksheet.Cells[1, 14, 2, 14].Merge = true;
                     worksheet.Cells[1, 14, 2, 14].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Medium);
                     worksheet.Cells[1, 15].Value = "Đã nộp";
@@ -249,8 +250,7 @@ namespace Project1
                     worksheet.Cells[1, 16].Value = "Còn thiếu";
                     worksheet.Cells[1, 16, 2, 16].Merge = true;
                     worksheet.Cells[1, 16, 2, 16].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Medium);
-                    // Write the data to Excel
-                    
+                                       
                     for (int row = 0; row < myDataGrid.Items.Count; row++)
                     {
                         for (int col = 0; col < myDataGrid.Columns.Count; col++)
@@ -333,6 +333,7 @@ namespace Project1
         private int _tong;
         private int _daNop;
         private int _conThieu;
+
         public int Id { get; set; }
         public int Gia {  get; set; }
         public int DienCu

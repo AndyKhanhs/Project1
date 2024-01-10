@@ -26,7 +26,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Width="166" Margin="150,0,0,0" >
                         <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="151" Height="32" Text="Giá"/>
-                        <TextBox Foreground="#FF838282" HorizontalAlignment="Left" IsReadOnly="True" TextWrapping="Wrap" x:Name="Gia" Text="{Binding gia, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                        <TextBox Foreground="#FF838282" HorizontalAlignment="Left" IsReadOnly="True" TextWrapping="Wrap" x:Name="Gia" Text="{Binding gia,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                     </StackPanel>
                 </StackPanel>
                 <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="0,46,0,295" Height="119" Width="724" >
@@ -45,7 +45,7 @@
                         </StackPanel>
                         <StackPanel  Orientation="Vertical" Width="160" Margin="15,0,0,0" >
                             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="151" Height="32" Text="Thành tiền"/>
-                            <TextBox x:Name="ThanhTienDien" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding thanhTienDien, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                            <TextBox x:Name="ThanhTienDien" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding thanhTienDien,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -66,7 +66,7 @@
                         </StackPanel>
                         <StackPanel  Orientation="Vertical" Width="160" Margin="15,0,0,0" >
                             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="151" Height="32" Text="Thành tiền"/>
-                            <TextBox x:Name="ThanhTienNuoc" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding thanhTienNuoc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                            <TextBox x:Name="ThanhTienNuoc" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding thanhTienNuoc,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -74,24 +74,24 @@
                 <StackPanel Orientation="Horizontal" Margin="22,344,2,49" Width="700" Height="86">
                     <StackPanel Orientation="Vertical" Width="200">
                         <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="199" Height="32" Text="Tiền nợ tháng trước"/>
-                        <TextBox x:Name="TNo" IsReadOnly="True" TextChanged="TNo_TextChanged" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding tNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                        <TextBox x:Name="TNo" IsReadOnly="True" TextChanged="TNo_TextChanged" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding tNo,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Width="166" Margin="150,0,0,0" >
                         <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="151" Height="32" Text="Tổng tiền"/>
-                        <TextBox x:Name="Tong" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding tong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                        <TextBox x:Name="Tong" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding tong,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="22,474,2,-2" Width="700" Height="86">
                     <StackPanel Orientation="Vertical" Width="162">
                         <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="199" Height="32" Text="Đã nộp"/>
-                        <TextBox x:Name="DaNop" Foreground="#FF838282" TextChanged="DaNop_TextChanged" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding daNop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                        <TextBox x:Name="DaNop" Foreground="#FF838282" TextChanged="DaNop_TextChanged" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding daNop,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                     </StackPanel>
                     <CheckBox x:Name="NopDu" Background="Transparent" Content="Đã nộp đủ" FontSize="18" Height="69" VerticalAlignment="Bottom" Unchecked="RadioButton_Checked" Checked="RadioButton_Checked">
                         
                     </CheckBox>
                     <StackPanel Orientation="Vertical" Width="166" Margin="82,0,0,0" >
                         <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="22" FontFamily="Montserrat" Width="151" Height="32" Text="Còn thiếu"/>
-                        <TextBox x:Name="ConThieu" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding conThieu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
+                        <TextBox x:Name="ConThieu" IsReadOnly="True" Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding conThieu,StringFormat=N0, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Width="150" FontSize="24"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>

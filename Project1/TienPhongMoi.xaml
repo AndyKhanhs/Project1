@@ -100,7 +100,7 @@
                         <DataGridTemplateColumn Width="150">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Style="{DynamicResource MahApps.Styles.TextBox}" Text="{Binding DienMoi, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                                    <TextBox Style="{DynamicResource MahApps.Styles.TextBox}" Text="{Binding DienMoi, UpdateSourceTrigger=PropertyChanged,Mode=OneWayToSource}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -114,14 +114,14 @@
                         <DataGridTemplateColumn Width="150">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding NuocMoi, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                                    <TextBox Text="{Binding NuocMoi, UpdateSourceTrigger=PropertyChanged,Mode=OneWayToSource}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Width="150">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding TNo, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                                    <TextBox Text="{Binding TNo,StringFormat=N0, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

@@ -25,15 +25,15 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="1323" Height="86"  VerticalAlignment="Top" Margin="0,130,0,0">
                 <StackPanel Orientation="Horizontal" Width="360" Height="42" Margin="29,0,0,0">
                     <TextBlock TextWrapping="Wrap" FontWeight="Bold" Foreground="#00416B"  FontSize="22" FontFamily="Montserrat" Width="120" Height="32"><Run Language="vi-vn" Text="Tổng tiền"/></TextBlock>
-                    <TextBox x:Name="TNo" IsReadOnly="True"  Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding Summ}"   Width="150" FontSize="24"/>
+                    <TextBox x:Name="TNo" IsReadOnly="True"  Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding Summ,StringFormat=N0}"   Width="150" FontSize="24"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Width="360" Height="41">
                     <TextBlock TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#00416B" FontFamily="Montserrat" Width="120" Height="32"><Run Language="vi-vn" Text="Đã"/><Run Text=" nộp"/></TextBlock>
-                    <TextBox x:Name="TNo1" IsReadOnly="True"  Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding SumDaNop}"   Width="150" FontSize="24"/>
+                    <TextBox x:Name="TNo1" IsReadOnly="True"  Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding SumDaNop,StringFormat=N0}"   Width="150" FontSize="24"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Width="360" Height="41">
                     <TextBlock TextWrapping="Wrap" FontSize="22" FontWeight="Bold" Foreground="#00416B" FontFamily="Montserrat" Width="126" Height="32"><Run Language="vi-vn" Text="Còn thiếu"/></TextBlock>
-                    <TextBox x:Name="TNo2" IsReadOnly="True"  Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding SumConThieu}"   Width="150" FontSize="24"/>
+                    <TextBox x:Name="TNo2" IsReadOnly="True"  Foreground="#FF838282" HorizontalAlignment="Left" TextWrapping="Wrap"  Text="{Binding SumConThieu,StringFormat=N0}"   Width="150" FontSize="24"/>
                 </StackPanel>
                 <Button Content="Xuất Excel" Click="ExportButton_Click" Foreground="White" Background="#7ACBFF" FontSize="24" Height="60" Margin="40,0,0,0"/>
             </StackPanel>
@@ -158,21 +158,21 @@
                     </i:Interaction.Triggers>
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Id}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding Gia}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding Gia,StringFormat=N0}" Width="80"/>
                         <DataGridTextColumn  Binding="{Binding DienCu}" Width="80"/>
                         <DataGridTextColumn  Binding="{Binding DienMoi}" Width="80"/>
                         <DataGridTextColumn  Binding="{Binding TieuThuDien}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding ThanhTienDien}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding ThanhTienDien,StringFormat=N0}" Width="80"/>
                         <DataGridTextColumn  Binding="{Binding NuocCu}" Width="80"/>
                         <DataGridTextColumn  Binding="{Binding NuocMoi}" Width="80"/>
                         <DataGridTextColumn  Binding="{Binding TieuThuNuoc}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding ThanhTienNuoc}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding Mang}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding VeSinh}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding TNo}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding Tong}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding DaNop}" Width="80"/>
-                        <DataGridTextColumn  Binding="{Binding ConThieu}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding ThanhTienNuoc,StringFormat=N0}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding Mang,StringFormat=N0}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding VeSinh,StringFormat=N0}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding TNo,StringFormat=N0}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding Tong,StringFormat=N0}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding DaNop,StringFormat=N0}" Width="80"/>
+                        <DataGridTextColumn  Binding="{Binding ConThieu,StringFormat=N0}" Width="80"/>
 
                     </DataGrid.Columns>
                 </DataGrid>

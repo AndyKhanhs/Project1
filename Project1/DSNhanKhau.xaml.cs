@@ -23,10 +23,11 @@ namespace Project1
     /// </summary>
     public partial class DSNhanKhau : UserControl,INotifyPropertyChanged
     {
-        private string _filterText;
-
         NhanKhauService nhanKhauService = new NhanKhauService();
         PhongService phongService = new PhongService();
+
+        private string _filterText;
+        private int _sum;        
         private List<NhanKhau> _list;
        
         public string FilterText
@@ -38,6 +39,18 @@ namespace Project1
                 {
                     _filterText = value;
                     OnPropertyChanged(nameof(FilterText));
+                }
+            }
+        }
+        public int SUm
+        {
+            get { return _sum; }
+            set
+            {
+                if (_sum != value)
+                {
+                    _sum = value;
+                    OnPropertyChanged(nameof(SUm));
                 }
             }
         }
@@ -65,8 +78,9 @@ namespace Project1
             using (var dbContext = new MyDbContext())
             {
                 ListNhanKhau = nhanKhauService.GetAll();
-
+                SUm = ListNhanKhau.Count();
             }
+            
             DataContext = this;
             EditCommand = new DelegateCommand<NhanKhau>(EditNhanKhau);
             DeleteCommand = new DelegateCommand<NhanKhau>(DeleteNhanKhau);
@@ -105,7 +119,7 @@ namespace Project1
                             nhanKhauService.Delete(dto.Id);
                             phongService.Decrease1(dto.Phong);
                             ListNhanKhau = nhanKhauService.GetAll();
-                            
+                            SUm = ListNhanKhau.Count();
                         }
 
                     }
@@ -114,6 +128,7 @@ namespace Project1
                         nhanKhauService.Delete(dto.Id);
                         phongService.Decrease1(dto.Phong);
                         ListNhanKhau = nhanKhauService.GetAll();
+                        SUm = ListNhanKhau.Count();
                     }
                 }
             }       
